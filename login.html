@@ -15,19 +15,50 @@
 <head>
     <meta charset="utf-8">
     <title>通讯录管理系统</title>
-    <link rel="stylesheet" href="login.css">  <!--注意    -->
+    <link rel="stylesheet" href="login.css">
+    <script>
+        function check(){
+            if (!document.getElementById("username").value)
+            {
+                alert("用户名不能为空");
+                return false;
+            }
+            else if (!document.getElementById("password").value)
+            {
+                alert("密码不能为空");
+                return false;
+            }
+            else
+            {
+                window.open ('\addressBook.html')
+               <!-- window.location.href=".\addressBook.html"; --!>
+            }
+        }
+    </script>
 </head>
 
 
 
 <body>
-    <div  class = "loginPage">
-        login <br>
-        <form  action=".\addressBook.html" method="get" >
-            username: <input type="text" name="user"><br>
-            password: <input type="password" name="password"><br>
-            <input type="submit" class="btns" value="登录">
+   <!-- <div  class = "loginPage" > -->
+  <div style="  padding-top:100px;font-size:2em;text-align:center; line-height:40px">
+      欢迎使用个人通讯录管理系统^_^
+  </div>
+        <div style="width:500px; height:300px; background-color:rgba(256,256,256,0.6);
+            position:absolute;
+             top:30%; left:34%;
+             font-size:2em;
+             padding-top=50%;
+             text-align:center
+        ">
+            <br> login <br>
+        <form>  <!--action=".\addressBook.html" method="get"-->
+            username: <input type="text" id="username"><br>
+            password: <input type="password" id="password"><br>
+            <br>
+            <input type="submit" class="btns" value="登录"  onclick="return check()">
         </form>
-    </div>
+        </div>
+   <!-- </div>  -->
 </body>
 </html>
